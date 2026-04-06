@@ -4,6 +4,7 @@ import com.healthmitra.backend.model.HealthRecord;
 import com.healthmitra.backend.repository.HealthRecordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
