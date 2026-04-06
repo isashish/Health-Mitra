@@ -1,9 +1,7 @@
 package com.healthmitra.backend.repository;
 
 import com.healthmitra.backend.model.HealthRecord;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-@Repository
-public interface HealthRecordRepository extends JpaRepository<HealthRecord, Long> {
+public interface HealthRecordRepository extends MongoRepository<HealthRecord, String> {
 }
