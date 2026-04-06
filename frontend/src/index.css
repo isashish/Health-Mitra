@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #1a9a8b;
+  --color-primary-dark: #137b70;
+  --color-accent: #f97316;
+  --color-dark: #0a1628;
+  --color-light: #f8fffe;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-accent: 'Space Grotesk', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+/* Swiper overrides */
+.swiper-pagination-bullet-active {
+  background: var(--color-primary) !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-primary) !important;
+}
+
+/* Global button styles */
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+  padding: 0.9rem 2.5rem;
+  border-radius: 50px;
+  font-family: var(--font-accent);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 25px rgba(26, 154, 139, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(26, 154, 139, 0.45);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .btn-primary {
+    padding: 0.8rem 2rem;
+    font-size: 0.875rem;
+  }
+}
