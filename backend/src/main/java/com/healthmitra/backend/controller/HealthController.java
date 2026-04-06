@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/health")
-@CrossOrigin(origins = "http://localhost:5173") // Adjust port as per your frontend
+@CrossOrigin(origins = "https://pro-health-mitra.vercel.app") // Adjust port as per your frontend
 public class HealthController {
 
     @Autowired
