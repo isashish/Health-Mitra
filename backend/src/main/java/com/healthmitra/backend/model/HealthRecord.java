@@ -24,5 +24,5 @@ public class HealthRecord {
     private String status;
     private String notes;
     private String type;
-    private LocalDateTime creSatedAt = LocalDateTime.now();
+    private LocalDateTime createdAt = LocalDateTime.now();
 }
