@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:8080/api/health';
+const API_BASE_URL = `${import.meta.env.VITE_API_URL}/api/health`;
 
 export const fetchRecords = async () => {
     try {
