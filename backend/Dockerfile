@@ -1,14 +1,25 @@
-# Use official Java image
-FROM eclipse-temurin:22-jdk
+# ---------- Stage 1: Build ----------
+FROM eclipse-temurin:22-jdk AS builder
 
-# Set working directory
 WORKDIR /app
 
-# Copy jar file
-COPY build/libs/healthmitra-backend-0.0.1-SNAPSHOT.jar app.jar
+# Copy everything
+COPY . .
 
-# Expose port
+# Give permission to gradlew
+RUN chmod +x gradlew
+
+# Build the project
+RUN ./gradlew build -x test
+
+# ---------- Stage 2: Run ----------
+FROM eclipse-temurin:22-jdk
+
+WORKDIR /app
+
+# Copy jar from builder stage
+COPY --from=builder /app/build/libs/*.jar app.jar
+
 EXPOSE 8080
 
-# Run the app
-ENTRYPOINT ["java","-jar","app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
